@@ -1,0 +1,17 @@
+{
+    "name": "Devops Date Diff Badge",
+    "version": "4.0",
+    "manifest_version": 3,
+    "author": "Paul McManus",
+
+    "icons": {
+        "20": "icon_20.png",
+        "40": "icon_40.png",
+        "128": "icon_128.png"
+    },
+
+    "content_scripts": [{
+        "matches": ["*://*.visualstudio.com/*/_boards/board/*","*://dev.azure.com/*/_boards/board/*"],
+        "js": ["lib/jquery.min.js","content.js"]
+    }]
+}
