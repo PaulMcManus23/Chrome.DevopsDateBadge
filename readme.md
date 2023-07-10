@@ -5,21 +5,6 @@ Extension will need to be [side loaded](https://docs.microsoft.com/en-us/microso
 
 ## Configuration
 
-Update the variables at the top of the content.js... for now.
+Toggle the extension so that it can be shown on the toolbar, then click on it to reveal the settings dialog.
 
-```
-// VARIABLES ****************************************************************************************************************************************
-const dateFieldName = "Committed Date"; // shown on the card
-const redThreshold = 20; // number of days to show the badge as red from
-const orangeThreshold = 10; // number of days to show the badge as orange from
-
-const dateSplitter = "/"; // could be - or . depending on your culture formatting
-const datePartYearIndex = 2; // AU is DD/MM/YYYY = index 2, US is MM/DD/YYYY = index of 2
-const datePartMonthIndex = 1; // AU is DD/MM/YYYY = index 1, US is MM/DD/YYYY = index of 0
-const datePartDayIndex = 0; // AU is DD/MM/YYYY = index 0, US is MM/DD/YYYY = index of 1
-
-// css colours for the different levels
-const greenColour = "green";
-const redColour = "red";
-const orangeColour = "orange";
-```
+NOTE: The default setting is for world date format, so if you have US dates going on in your DEVOPS you will probably want to change this straight away.
