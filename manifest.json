@@ -1,17 +1,28 @@
 {
-    "name": "Devops Date Diff Badge",
-    "version": "4.0",
-    "manifest_version": 3,
-    "author": "Paul McManus",
-
-    "icons": {
-        "20": "icon_20.png",
-        "40": "icon_40.png",
-        "128": "icon_128.png"
-    },
-
-    "content_scripts": [{
-        "matches": ["*://*.visualstudio.com/*/_boards/board/*","*://dev.azure.com/*/_boards/board/*"],
-        "js": ["lib/jquery.min.js","content.js"]
-    }]
+  "name": "Devops Date Diff Badge",
+  "version": "4.0",
+  "manifest_version": 3,
+  "author": "Paul McManus",
+  
+  "icons": {
+    "20": "icon_20.png",
+    "40": "icon_40.png",
+    "128": "icon_128.png"
+  },
+  "action": {
+    "default_popup": "settings.html"
+  },
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.visualstudio.com/*/_boards/board/*",
+        "*://dev.azure.com/*/_boards/board/*"
+      ],
+      "js": ["lib/jquery.min.js", "content.js"]
+    }
+  ]
 }

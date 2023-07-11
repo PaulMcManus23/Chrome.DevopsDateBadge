@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DEVOPS Date Badge</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .appicon {
+      float:right;
+      width:30%;
+    }
+
+  </style>
+  <script src="settings.js"></script>
+</head>
+
+<body>
+  <h1>DEVOPS Date Badge</h1>
+  <img src="icon_128.png" class="appicon" title="Icon" />
+
+  <label for="dateFieldName">Date Field Name:</label>
+  <input type="text" id="dateFieldName" name="dateFieldName" value="Committed Date"><br />
+
+  <label for="formatSelect">Preferred Date Format:</label>
+  <select id="formatSelect">
+    <option value="ddmmyy/">dd/mm/yyyy</option>
+    <option value="ddmmyy-">dd-mm-yyyy</option>
+    <option value="ddmmyy.">dd.mm.yyyy</option>
+    <option value="mmddyy/">mm/dd/yyyy</option>
+    <option value="mmddyy-">mm-dd-yyyy</option>
+    <option value="mmddyy.">mm.dd.yyyy</option>
+    <option value="yymmdd/">yyyy/mm/dd</option>
+    <option value="yymmdd-">yyyy-mm-dd</option>
+    <option value="yymmdd.">yyyy.mm.dd</option>
+    <!-- Add more date format options if needed -->
+  </select>
+  <br />
+  <br />
+
+  <label for="greenColour">Green Colour:</label>
+  <input type="text" id="greenColour" name="greenColour" value="#008000"><br>
+  <br />
+
+
+  <label for="orangeThreshold">Orange Threshold:</label>
+  <input type="number" id="orangeThreshold" name="orangeThreshold" value="10"><br>
+
+  <label for="orangeColour">Orange Colour:</label>
+  <input type="text" id="orangeColour" name="orangeColour" value="#FFA500"><br><br>
+  <br />
+
+  <label for="redThreshold">Red Threshold:</label>
+  <input type="number" id="redThreshold" name="redThreshold" value="20"><br>
+  
+  <label for="redColour">Red Colour:</label>
+  <input type="text" id="redColour" name="redColour" value="#FF0000"><br>
+  <br />
+
+  <p>Refresh the page after changing these settings</p>
+
+  <p style="text-align: right;">
+    <button id="cancelButton">Cancel</button>&nbsp;<button id="saveButton">Save</button>
+  </p>
+</body>
+
+</html>
