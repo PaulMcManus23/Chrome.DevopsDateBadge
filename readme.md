@@ -1,5 +1,10 @@
 # Azure Devops Date Badge - Chrome/Edge browser extension
 
+Available in [MSEdge extension store](https://microsoftedge.microsoft.com/addons/detail/devops-date-diff-badge/pegeollldhaklallpoiepkeamihedefk)
+
+
+
+
 Extension will need to be [side loaded](https://docs.microsoft.com/en-us/microsoft-edge/extensions-chromium/getting-started/extension-sideloading) into your browser. 
 
 
