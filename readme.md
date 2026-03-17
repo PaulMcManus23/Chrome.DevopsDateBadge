@@ -5,7 +5,27 @@ Available in [MSEdge extension store](https://microsoftedge.microsoft.com/addons
 
 
 
-Extension will need to be [side loaded](https://docs.microsoft.com/en-us/microsoft-edge/extensions-chromium/getting-started/extension-sideloading) into your browser. 
+Extension will need to be [side loaded](https://docs.microsoft.com/en-us/microsoft-edge/extensions-chromium/getting-started/extension-sideloading) into your browser.
+
+## Side load (current workflow)
+
+1. From the repo root, run:
+
+```bash
+npm install
+npm run build
+```
+
+2. Open `chrome://extensions/` (or `edge://extensions/`) and enable Developer mode.
+3. Click Load unpacked.
+4. Select the `dist` folder.
+
+`dist` now contains everything needed to load the extension:
+- `manifest.json`
+- `content.js`
+- `service_worker.js`
+- `lib/jquery.min.js`
+- icons and popup assets
 
 
 ## Configuration

@@ -2,6 +2,14 @@ const MESSAGE_GETSETTINGS = "GetSettings";
 const MESSAGE_SAVESETTINGS = "SaveSettings";
 const KEY_SETTINGS = "ddbSettings";
 const DEFAULT_SETTINGS = {
+  fieldConfigs: [
+    {
+      dateFieldName: "Committed Date",
+      redThreshold: 20,
+      orangeThreshold: 10,
+    }
+  ],
+  // Keep old format for backward compatibility
   dateFieldName: "Committed Date",
   redThreshold: 20,
   orangeThreshold: 10,
@@ -9,9 +17,9 @@ const DEFAULT_SETTINGS = {
   datePartYearIndex: 2,
   datePartMonthIndex: 1,
   datePartDayIndex: 0,
-  greenColour: "green",
-  redColour: "red",
-  orangeColour: "orange",
+  greenColour: "#008000",
+  redColour: "#FF0000",
+  orangeColour: "#FFA500",
 };
 
 //ensure defaults are set
