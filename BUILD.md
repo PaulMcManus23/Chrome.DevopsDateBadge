@@ -5,8 +5,8 @@ A Chrome extension that displays age badges on Azure DevOps boards, showing how 
 ## Setup
 
 ### Prerequisites
-- Node.js 16+ 
-- npm or yarn
+- Node.js 18+
+- npm
 
 ### Installation
 
@@ -20,7 +20,11 @@ npm install
 npm run build
 ```
 
-This build now packages a complete extension into `dist/` (manifest, background/content scripts, icons, and popup assets).
+The build performs these steps:
+- Type checks the TypeScript codebase
+- Transpiles `src/content.ts` to root `content.js`
+- Builds popup assets with Vite
+- Packages a complete loadable extension into `dist/`
 
 3. Load the extension in Chrome:
    - Go to `chrome://extensions/`
@@ -28,27 +32,38 @@ This build now packages a complete extension into `dist/` (manifest, background/
    - Click "Load unpacked"
    - Select the `dist` directory
 
+This also works in Edge using `edge://extensions/`.
+
 ### Development
 
-For development with hot reload:
+Start popup development server:
 ```bash
 npm run dev
 ```
 
-This will start a Vite dev server. Changes to React components will hot-reload (but extension reloading may still be required for manifest/content script changes).
+Type check only:
+```bash
+npm run typecheck
+```
+
+Run unit tests:
+```bash
+npm test
+```
 
 ## Features
 
 - **Multiple Field Configurations**: Configure multiple date fields to work across different boards simultaneously
-- **Flexible Date Formats**: Supports various date formats (dd/mm/yyyy, yyyy-mm-dd, etc.)
-- **Color-Coded Thresholds**: Customize colors and day thresholds for visual age indicators
-- **React + Tailwind CSS**: Modern, responsive settings UI
+- **Shared Date Format and Colors**: Common format/colors across all field configurations
+- **Per-Field Thresholds**: Each field defines its own orange/red thresholds
+- **React + Tailwind + TypeScript**: Modern, typed settings UI and content logic
 - **Backward Compatible**: Automatically converts old single-field settings to multi-field format
 
 ## Tech Stack
 
 - **React 18**: UI framework
 - **Vite**: Build tool
+- **TypeScript**: Type safety for popup and content logic
 - **Tailwind CSS**: Styling
 - **Chrome Extensions API**: Browser integration
 
@@ -56,16 +71,21 @@ This will start a Vite dev server. Changes to React components will hot-reload (
 
 ```
 src/
-├── main.jsx           # React app entry point
-├── App.jsx            # Main settings component
+├── main.tsx           # React app entry point
+├── App.tsx            # Main settings component
+├── content.ts         # Content script source
 ├── components/        # React components
-│   └── FieldConfig.jsx
+│   └── FieldConfig.tsx
 ├── utils/            # Utility functions
-│   └── dateFormat.js
+│   └── dateFormat.ts
 ├── index.css         # Tailwind CSS imports
-└── popup.html        # HTML template for popup
 
-dist/               # Build output (generated)
+content.js            # Generated from src/content.ts
+popup.html            # Popup host page
+manifest.json         # Extension manifest
+service_worker.js     # Background worker
+
+dist/                # Packaged extension output (generated)
 ```
 
 ## Build Output
