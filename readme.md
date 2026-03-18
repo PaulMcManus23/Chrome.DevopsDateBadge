@@ -13,6 +13,16 @@ https://microsoftedge.microsoft.com/addons/detail/devops-date-diff-badge/pegeoll
 - Uses per-field thresholds for orange/red status.
 - Works with legacy saved settings and migrates them on save.
 
+## Screenshots
+
+### Board Badges
+
+![Azure DevOps board cards with date age badges](misc/sample_boardimage.png)
+
+### Extension Settings
+
+![Extension settings popup showing shared colors and field configurations](misc/settings_image.png)
+
 ## Supported Azure DevOps URLs
 
 - https://*.visualstudio.com/*/_boards/board/*
