@@ -1,6 +1,6 @@
 {
   "name": "Devops Date Diff Badge",
-  "version": "4.0",
+  "version": "4.1.0",
   "manifest_version": 3,
   "author": "Paul McManus",
   
@@ -10,12 +10,18 @@
     "128": "icon_128.png"
   },
   "action": {
-    "default_popup": "settings.html"
+    "default_popup": "dist/popup.html"
   },
   "background": {
     "service_worker": "service_worker.js"
   },
   "permissions": ["storage"],
+  "web_accessible_resources": [
+    {
+      "resources": ["dist/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "content_scripts": [
     {
       "matches": [
